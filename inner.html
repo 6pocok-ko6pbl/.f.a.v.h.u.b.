@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
-<html>
-<body>
+<html><head></head><body>
 
 <p>Click the button to encode a URI.</p>
 
@@ -13,27 +13,9 @@ function myFunction() {
   var uri = document.documentElement.outerHTML;
   var res = encodeURI(uri);
   document.getElementById("demo").innerHTML = res;
-  document.getElementById("demo").href = "data:text/html;charset=utf-8," + res;
+  document.getElementById("demo").href = "data:text/html;charset=utf-8," + "%3C!DOCTYPE%20html%3E%0D%0A" + res;
 }
 </script>
-
-</body>
-</html>
-<p>Click the button to encode a URI.</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<a id="demo"></a>
-
-<script>
-function myFunction() {
-  var uri = document.documentElement.outerHTML;
-  var res = encodeURI(uri);
-  document.getElementById("demo").innerHTML = res;
-  document.getElementById("demo").href = "data:text/html;charset=utf-8," + res;
-}
-</script>
-
 
 
 </body></html>
