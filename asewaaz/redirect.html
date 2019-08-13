@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><link href="" rel="icon" type="image/x-icon" /><title>TiTLE</title>
+<script type="text/javascript">
+var favicon = {
+ 
+change: function(iconURL) {
+  if (arguments.length==2) {
+    document.title = optionalDocTitle;
+  }
+  this.addLink(iconURL, "icon");
+  this.addLink(iconURL, "shortcut icon");
+},
+ 
+addLink: function(iconURL, relValue) {
+  var link = document.createElement("link");
+  link.type = "image/x-icon";
+  link.rel = relValue;
+  link.href = iconURL;
+  this.removeLinkIfExists(relValue);
+  this.docHead.appendChild(link);
+},
+ 
+removeLinkIfExists: function(relValue) {
+  var links = this.docHead.getElementsByTagName("link");
+  for (var i=0; i<links .length; i++) {
+    var link = links[i];
+    if (link.type=="image/x-icon" && link.rel==relValue) {
+      this.docHead.removeChild(link);
+      return; // Assuming only one match at most.
+    }
+  }
+},
+ 
+docHead:document.getElementsByTagName("head")[0]
+}
+</script></head><body>
+<a href="https://ya.ru">body</a>
+<script type="text/javascript">
+//alert(0);
+//favicon.change("https://github.githubassets.com/favicon.ico");
+favicon.change("data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAmQGX/Jj9h/yY/X/8qQ2T/M05y/zFLbP8zTW//OlV5/z1af/9AXYX/QV6F/0Feg/9AXID/QFyB/0BghP8/XoT/LlaD/y5Rff80VIT/PmCR/0Vqmf9CZZT/Q2OU/0Fhkv88W4n/QV+O/zZOev88WYP/NU54/y1GbP8rRGv/KD9l/1OTwv9Jhrb/RXqr/0p6qv9IeKj/SXam/0Vun/9Peab/T3ij/0tynf9OdqH/U3yk/1R7of9TdZn/N1F//yY5Y/+n1en/mMfc/5nI2/+Zxtf/msbY/5bD1f+UvtL/mcPW/5nC1f+WvND/jLHG/4quwv+Vt8r/o8LT/5K0zP9ceaL/msHQ/5G3xv+Jq7f/lbW8/5KxuP+Go67/kaiq/5Wpp/+Spqb/kKGe/46fm/+QoqL/jqCh/5Sko/+RoqP/XXWW/4+1xf+fv8n/iq6//2qImv9QZXj/TF9x/2d0fP91eHP/dXdx/3Z3cP93dmz/fHxz/3+Gg/+CjpD/eoiO/0Fbhf+HjIr/iIV+/4qKgv9+fnf/fH56/36DhP9/g4P/enp2/3d2dP99f4H/e3x7/3Zzbv93b2f/fHVu/3x/ff8xWZf/h4aD/4R+df98bl//jIJ1/42Gev+BdWf/fnFg/3hpVv+JkpT/f5Kh/3uRov91hpX/doGM/3+Bgv9reY3/Jlih/5OgqP+Ehob/jI6M/6G1wP+Qnqb/houQ/4aFg/97cGr/g4SI/3yVqv9pfI//Y2ly/2xqbv9rY2D/WnCP/yZZnf+WnaL/n6Sl/6Osrv+SpK//fY6b/3l3ev9zZWH/hIGE/39xa/+Kg4H/lau//4eRnf94eX//YFpd/1Bief8nVZT/iXtx/5GJgv+KiIf/gXx7/4WGiP+EhYj/enV3/4iMkf99dHH/fXRy/5mvwv+Qq8L/cH2O/3V7hv9id5H/JU+R/56goP+hoqL/tczX/5ajqv+iq7L/q8DN/5usuv+RoK7/lqS0/5KqwP99jZ7/gI+f/4iYp/99i5r/XXGH/yhQiP+Rn6r/ioyQ/5KtvP9rgZL/f5am/3qUp/92ipr/hpal/5GZpP+LlaD/gYuZ/36Gk/9veon/WF5q/ztbff8fQ33/hpup/4mltf+VscD/lLLB/3KHl/9zhZT/aXWE/3F5hP95eYD/hImT/4qaqv+CkqL/aXWE/1hgbf9OYXn/TVx6/1hbYf9teoX/la68/5qywP9+jZr/doST/2NvfP9VXmn/Ultp/1Jbav9PWWj/UVtr/1didP9aZXX/WWBt/2duev9rdoD/dYWR/32Wpv94jZ7/Z3eG/1lkcf9MU1//TVVg/0dKVf9DRVD/RUlU/0pPW/9JTVn/S09b/01RXP9QUl3/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==");
+</script></body></html>
